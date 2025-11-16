@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import datetime
 import os
+import sys
 import typing
 
 def filesize_fmt(num, suffix="B"):
@@ -14,7 +15,10 @@ def filesize_fmt(num, suffix="B"):
     return f"{num:.1f}Yi{suffix}"
 
 app = Flask(__name__)
-app.secret_key = "04e98819b4804c25092a5b9cbe0a481aa3b85dd32d229561a6dccfa8e64d8157"
+app.secret_key = os.getenv("FLASK_SECRET_KEY", "Not Found")
+
+if app.secret_key == "Not Found":
+    sys.exit(1)
 
 env = app.jinja_env
 
@@ -22,12 +26,12 @@ def safe_render_template(template: str, **context: typing.Any) -> str:
     try:
         return env.get_template(template).render(context)
     except Exception:
-        return render_template("404.html"), 404
-    
+        return render_template("errors/404.html"), 404
+
 def safe_strip(value: str | None) -> str:
     if isinstance(value, str):
         return value.strip()
-    
+
     return ""
 
 @app.route("/")
@@ -84,17 +88,24 @@ def list_directory(subpath=""):
     abs_path = os.path.join('/mnt/drive1/files', subpath)
 
     if not os.path.exists(abs_path):
-        return render_template("404.html"), 404
+        return render_template("errors/404.html"), 404
 
     if os.path.isfile(abs_path):
         # If it's a file, serve it for download
         return send_from_directory(os.path.dirname(abs_path), os.path.basename(abs_path), as_attachment=True)
+
+    if subpath.startswith("priv"):
+        return render_template("errors/404.html"), 404
 
     # Get a list of files and subdirectories
     longest_name = 0
     items = []
     labels = []
     for item in os.listdir(abs_path):
+        # Hiding the priv folder
+        if item == "priv":
+            continue
+
         item_path = os.path.join(abs_path, item)
 
         is_directory = os.path.isdir(item_path)
@@ -137,7 +148,12 @@ def cnuclasses():
 
     # Parsing the output
     soup = BeautifulSoup(response.text, 'html.parser')
-    return render_template("cnuclasses.html", classes=soup.tbody.find_all("tr"), safe_strip=safe_strip)
+    try:
+        classes = soup.tbody.find_all("tr")
+    except Exception:
+        return render_template("errors/503.html", message="The schedule of classes decided to die for some reason.  Please wait for them to fix the issue.")
+
+    return render_template("cnuclasses.html", classes=classes, safe_strip=safe_strip)
 
 @app.route("/<query>")
 def query(query):
