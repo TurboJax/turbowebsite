@@ -17,6 +17,8 @@ def filesize_fmt(num, suffix="B"):
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "Not Found")
 
+allowed_dirs = os.getenv("ALLOWED_DIRS", "").split(",")
+
 if app.secret_key == "Not Found":
     sys.exit(1)
 
@@ -85,17 +87,26 @@ def swift_tickets(ticket):
 @app.route('/files/')
 @app.route('/files/<path:subpath>')
 def list_directory(subpath=""):
+    subpath = str(subpath)
     abs_path = os.path.join('/mnt/drive1/files', subpath)
 
     if not os.path.exists(abs_path):
-        return render_template("errors/404.html"), 404
+        return render_template("errors/404.html"), 400
 
     if os.path.isfile(abs_path):
         # If it's a file, serve it for download
         return send_from_directory(os.path.dirname(abs_path), os.path.basename(abs_path), as_attachment=True)
 
     if subpath.startswith("priv"):
-        return render_template("errors/404.html"), 404
+        is_allowed = False
+        for allowed_dir in allowed_dirs:
+            if allowed_dir == "":
+                continue
+            if subpath.startswith(f"priv/{allowed_dir}"):
+                is_allowed = True
+                break
+        if not is_allowed:
+            return render_template("errors/404.html"), 404
 
     # Get a list of files and subdirectories
     longest_name = 0
@@ -103,7 +114,7 @@ def list_directory(subpath=""):
     labels = []
     for item in os.listdir(abs_path):
         # Hiding the priv folder
-        if item == "priv":
+        if subpath == "" and item == "priv":
             continue
 
         item_path = os.path.join(abs_path, item)
@@ -117,7 +128,7 @@ def list_directory(subpath=""):
         modified_datetime = datetime.datetime.fromtimestamp(os.path.getmtime(abs_path))
         items.append({'name':item, 'size':size, 'last_modified':modified_datetime})
 
-        labels.append(f'<a href="{item}">')
+        labels.append(f'<a href="{item_path[11::]}">')
         if len(item) > longest_name:
             longest_name = len(item)
 

@@ -31,7 +31,7 @@ pre a {
 <h1>Index of /{{current_path}}</h1>
 
 <pre>
-{% if current_path %}<a href="https://turbojax.org/files/{{current_path}}../">../</a>
+{% if current_path %}<a href="https://turbojax.org/files/{{current_path}}{% if not current_path.endswith("/") %}/{% endif %}../">../</a>
 
 {% endif %}{% for label in labels %}{{label | safe}}
 
