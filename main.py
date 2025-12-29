@@ -1,3 +1,5 @@
+# TODO: Add image/video/document viewers to /files so you don't need to download everything.
+
 from flask import Flask, flash, request, render_template, send_from_directory, redirect, url_for
 from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
@@ -35,6 +37,19 @@ def safe_strip(value: str | None) -> str:
         return value.strip()
 
     return ""
+
+def path_sort(prefix: str, items: list[str]) -> list[str]:
+    dirs = []
+    files = []
+    for item in items:
+        if os.path.isdir(prefix + item):
+            dirs.append(item)
+        else:
+            files.append(item)
+
+    dirs.sort()
+    files.sort()
+    return dirs + files
 
 @app.route("/")
 def index():
@@ -112,12 +127,22 @@ def list_directory(subpath=""):
     longest_name = 0
     items = []
     labels = []
-    for item in os.listdir(abs_path):
+    for item in path_sort(abs_path, os.listdir(abs_path)):
         # Hiding the priv folder
         if subpath == "" and item == "priv":
             continue
 
         item_path = os.path.join(abs_path, item)
+
+        try:
+            os.stat(item_path)
+        except OSError as e:
+            if e.errno == errno.ENOENT:
+                labels.append("stat failed")
+                items.append({'name':item, 'size':"-", 'last_modified': datetime.datetime.fromtimestamp(os.path.getmtime(abs_path))})
+                continue
+            else:
+                raise e
 
         is_directory = os.path.isdir(item_path)
         size = filesize_fmt(os.path.getsize(item_path))
@@ -134,7 +159,10 @@ def list_directory(subpath=""):
 
     # Formatting the labels
     for i in range(len(labels)):
-        labels[i] += f"{items[i]['name'].ljust(longest_name, ' ')}</a>  {items[i]['last_modified']}  {items[i]['size'].rjust(9, ' ')}"
+        if labels[i] == "stat failed":
+            labels[i] = f"{items[i]['name'].ljust(longest_name, ' ')}  {items[i]['last_modified']}  {items[i]['size'].rjust(9, ' ')}"
+        else:
+            labels[i] += f"{items[i]['name'].ljust(longest_name, ' ')}</a>  {items[i]['last_modified']}  {items[i]['size'].rjust(9, ' ')}"
 
     return render_template('directory_listing.html', labels=labels, current_path=subpath)
 
