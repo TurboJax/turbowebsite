@@ -8,6 +8,8 @@ import datetime
 import os
 import sys
 import typing
+import errno
+
 
 def filesize_fmt(num, suffix="B"):
     for unit in ("", "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"):
@@ -201,6 +203,12 @@ def query(query):
 
     return safe_render_template(f"{query}.html")
 
+@app.route("/witchlight/<session>")
+def dnd_witchlight(session):
+    if (session.endswith(".html")):
+        return safe_render_template(f"witchlight/{session}")
+
+    return safe_render_template(f"witchlight/{session}.html")
 
 @app.route("/ctfs/<string:ctf>", defaults={"route": None})
 @app.route("/ctfs/<string:ctf>/<string:route>")
