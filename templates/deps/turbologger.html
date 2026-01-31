@@ -7,8 +7,8 @@
 # TurboLogger
 
 ## Links:
-- Vendordep URL: [https://turbojax.org/static/files/TurboLogger.json](https://turbojax.org/static/files/TurboLogger.json)
-- Javadocs: [https://turbojax.org/static/javadocs/turbologger/index.html](https://turbojax.org/static/javadocs/turbologger/index.html)
+- Vendordep URL: [https://turbojax.org/files/TurboLogger.json](https://turbojax.org/files/TurboLogger.json)
+- Javadocs: [https://turbojax.org/javadocs/turbologger/index.html](https://turbojax.org/javadocs/turbologger/index.html)
 - Github: [https://git.turbojax.org/TurboLogger](https://git.turbojax.org/TurboLogger)
 
 ## Usage:
@@ -24,7 +24,7 @@ import org.turbojax.TurboLogger;
 
 ## Aliases
 - Aliases are essentially shorter forms of keys.  Rather than referencing "/motors/motor1/outputs/voltage" every time you want to read the voltage, you can make an alias called "m1voltage" and read that instead.
-- To make an alias, you can use `TurboLogger.addAliases()`.  The first parameter is the key, and the next is an array of the aliases.
+- To make an alias, you can use `TurboLogger.addAlias()`.  The first parameter is the key, and the next is an alias.
 - Example:
 ```
 TurboLogger.addAliases("/motors/motor1/outputs/voltage", "m1voltage");

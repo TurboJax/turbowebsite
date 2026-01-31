@@ -61,6 +61,17 @@ def index():
 def bucketlist(quarter):
     return safe_render_template(f"/bucketlist/{quarter}.html")
 
+@app.route("/javadocs/<project>")
+@app.route("/javadocs/<project>/")
+def redirect_to_javadocs(project):
+    return redirect(f"/javadocs/{project}/index.html", code=302)
+
+@app.route("/javadocs/<project>/<path:path>")
+def javadocs(project, path=""):
+    if path == "":
+        return send_from_directory(f"javadocs/{project}/", "index.html")
+    return send_from_directory(f"javadocs/{project}", path)
+
 @app.route("/deps/<project>")
 def deps(project):
     return render_template(f"/deps/{project.lower()}.html")
