@@ -179,8 +179,11 @@ def list_directory(subpath=""):
 
     return render_template('directory_listing.html', labels=labels, current_path=subpath)
 
-@app.route("/cnuclasses")
+@app.get("/cnuclasses")
 def cnuclasses():
+    # TODO: Add a form that allows people to specify the semester to get info from.
+    # When finding `semesterlist` values in the future, use the year but use the year + 1 if it is the fall semester.  XX is 00 for fall semester, 10 for spring semester, 20 for may term, 31 for summer term 1, and 32 for summer term 2.
+
     session = requests.Session()
 
     # Getting session cookies
@@ -207,22 +210,23 @@ def cnuclasses():
 
     return render_template("cnuclasses.html", classes=classes, safe_strip=safe_strip)
 
-@app.route("/<query>")
+@app.get("/<query>")
 def query(query):
     if (query.endswith(".html")):
         return safe_render_template(query)
 
     return safe_render_template(f"{query}.html")
 
-@app.route("/witchlight/<session>")
+@app.get("/witchlight/<session>")
 def dnd_witchlight(session):
     if (session.endswith(".html")):
         return safe_render_template(f"witchlight/{session}")
 
     return safe_render_template(f"witchlight/{session}.html")
 
-@app.route("/ctfs/<string:ctf>", defaults={"route": None})
-@app.route("/ctfs/<string:ctf>/<string:route>")
+# Route to handle CTF viewer
+@app.get("/ctfs/<string:ctf>", defaults={"route": None})
+@app.get("/ctfs/<string:ctf>/<string:route>")
 def ctfs(ctf, route):
     if route == None:
         route = "index"
