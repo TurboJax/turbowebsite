@@ -233,5 +233,6 @@ def ctfs(ctf, route):
 
     return render_template(f"/ctfs/{ctf}/{route}.html")
 
+# Run app
 if __name__ == "__main__":
-    app.run(debug=True, port=3002, host="0.0.0.0")
+    app.run(debug=True, port=444, host="0.0.0.0")
