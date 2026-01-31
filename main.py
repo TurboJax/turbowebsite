@@ -10,7 +10,6 @@ import sys
 import typing
 import errno
 
-
 def filesize_fmt(num, suffix="B"):
     for unit in ("", "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"):
         if abs(num) < 1024.0:
