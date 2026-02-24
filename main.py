@@ -11,13 +11,6 @@ import sys
 import typing
 import errno
 
-def filesize_fmt(num, suffix="B"):
-    for unit in ("", "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"):
-        if abs(num) < 1024.0:
-            return f"{num:3.2f}{unit}{suffix}"
-        num /= 1024.0
-    return f"{num:.1f}Yi{suffix}"
-
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "Not Found")
 
@@ -116,8 +109,49 @@ def render_md(md_path: str) -> str | tuple:
         print("Could not find the core \"util/raw_md.j2\" template!")
         return http_error(404)
 
+def filesize_fmt(num: float) -> str:
+    """ Formats a number of bytes into different unit sizes. """
+    for unit in ("", "Ki", "Mi", "Gi", "Ti", "Pi", "Ei", "Zi"):
+        if abs(num) < 1024:
+            return f"{num:3.2f}{unit}B"
+        num /= 1024
+
+    return f"{num:.1f}YiB"
+
+def safe_strip(value: str | None) -> str:
+    """ Safely checks if a value is a string before stripping extra whitespace from it. """
+    return value.strip() if isinstance(value, str) else ""
+
+def path_sort(dir: str, paths: list[str]) -> list[str]:
+    """
+    Sorts a list of paths in alphabetical order, separating directories and files.
+    If a path does not exist, it is not included in the results.
+
+    Parameters:
+        dir (str): The parent directory of each path.
+        paths (list[str]): The list of paths to sort.
+
+    Returns:
+        list[str]: The sorted list of directories and files
+    """
+    dirs = []
+    files = []
+    for path in paths:
+        if os.path.isdir(dir + path):
+            dirs.append(path)
+        elif os.path.isfile(dir + path):
+            files.append(path)
+
+    dirs.sort()
+    files.sort()
+    return dirs + files
+
+# App Routes
+
+# Main static page getter
+@app.get("/")
 @app.get("/<path:query>")
-def query(query):
+def query(query=""):
     # Checking if the query points to a file the server is equipped to handle
     if os.path.isfile(f"templates/{query}.md"):
         return render_md(f"{query}.md")
@@ -138,44 +172,22 @@ def query(query):
     # No good file found, return 404
     return http_error(404)
 
-def safe_strip(value: str | None) -> str:
-    if isinstance(value, str):
-        return value.strip()
-
-    return ""
-
-def path_sort(prefix: str, items: list[str]) -> list[str]:
-    dirs = []
-    files = []
-    for item in items:
-        if os.path.isdir(prefix + item):
-            dirs.append(item)
-        else:
-            files.append(item)
-
-    dirs.sort()
-    files.sort()
-    return dirs + files
-
-@app.route("/")
-def index():
-    return render_jinja('index.j2')
-
+# Renders javadocs for the users
 @app.route("/javadocs/<project>")
 @app.route("/javadocs/<project>/")
-def redirect_to_javadocs(project):
-    return redirect(f"/javadocs/{project}/index.html", code=302)
-
 @app.route("/javadocs/<project>/<path:path>")
 def javadocs(project, path=""):
     if path == "":
-        return send_from_directory(f"javadocs/{project}/", "index.html")
+        return redirect(f"/javadocs/{project}/index.html")
+
     return send_from_directory(f"javadocs/{project}", path)
 
+# Sends my resume
 @app.route("/resume.pdf")
 def resume():
     return send_from_directory("static/files", "resume.pdf")
 
+# File server
 @app.route('/files')
 @app.route('/files/')
 @app.route('/files/<path:subpath>')
@@ -275,6 +287,6 @@ def cnuclasses():
 
     return render_template("cnuclasses.j2", classes=classes, safe_strip=safe_strip)
 
-# Run app
+# Running the app
 if __name__ == "__main__":
     app.run(debug=True, port=444, host="0.0.0.0")
