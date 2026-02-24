@@ -3,6 +3,7 @@
 from flask import Flask, flash, request, render_template, send_from_directory, redirect, url_for
 from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
+from jinja2 import TemplateNotFound
 import requests
 import datetime
 import os
@@ -27,11 +28,115 @@ if app.secret_key == "Not Found":
 
 env = app.jinja_env
 
-def safe_render_template(template: str, **context: typing.Any) -> str:
+def http_error(code: int, **kwargs) -> tuple:
+    """
+    Gets the page for the http error code.
+    All error code pages should be created as jinja templates.
+
+    Parameters:
+        code (int): The HTTP error code to get the page for.
+
+    Returns:
+        tuple: The html response and the error code
+    """
+    return render_template(f"errors/{code}.j2", **kwargs), code
+
+def render_jinja(template: str, **kwargs) -> str | tuple:
+    """
+    Renders a jinja2 template.
+    If the template is not found, it renders the 404 error.
+
+    Parameters:
+        template (str): The jinja template to render.
+
+    Returns:
+        str: The rendered template
+        tuple: The 404 page and error code 404
+    """
     try:
-        return env.get_template(template).render(context)
-    except Exception:
-        return render_template("errors/404.html"), 404
+        # Rendering the template
+        return env.get_template(template).render(**kwargs)
+    except TemplateNotFound:
+        # 404 because the template could not be found
+        return http_error(404)
+
+def render_html(html_path: str) -> str | tuple:
+    """
+    Renders an html file.
+
+    Parameters:
+        html_path (str): The path to the html file, starting from the templates directory.
+
+    Returns:
+        str: The html page
+        tuple: The 404 page and error code 404
+    """
+    try:
+        # Loading the html
+        with open(f"templates/{html_path}", "r") as file:
+            data = file.read()
+        return data
+    except FileNotFoundError:
+        # 404 because the file could not be found
+        return http_error(404)
+
+def render_md(md_path: str) -> str | tuple:
+    """
+    Renders a markdown file.
+    If the markdown file is not found, it renders the 404 error.
+
+    NOTE:
+        To allow the pages to define their title and header, the first two lines of the md file should be the title and header values respectively.
+        These lines are not rendered in the body of the page.
+
+    Parameters:
+        md_path (str): The path to the markdown file, starting from the templates directory.
+
+    Returns:
+        str: The rendered page
+        tuple: The 404 page and error code 404
+    """
+    try:
+        # Getting the markdown template
+        template = env.get_template("util/raw_md.j2")
+
+        # Reading the markdown file
+        with open(f"templates/{md_path}", "r") as file:
+            title = file.readline()
+            header = file.readline()
+            data = file.read()
+
+        # Rendering the template
+        return template.render(md=data, title=title, header=header)
+    except FileNotFoundError:
+        # 404 because the markdown file could not be found
+        return http_error(404)
+    except TemplateNotFound:
+        # 404 because the template could not be found.  This is a major issue
+        print("Could not find the core \"util/raw_md.j2\" template!")
+        return http_error(404)
+
+@app.get("/<path:query>")
+def query(query):
+    # Checking if the query points to a file the server is equipped to handle
+    if os.path.isfile(f"templates/{query}.md"):
+        return render_md(f"{query}.md")
+    if os.path.isfile(f"templates/{query}.j2"):
+        return render_jinja(f"{query}.j2")
+    if os.path.isfile(f"templates/{query}.html"):
+        return render_html(f"{query}.html")
+
+    # Checking if the query is a directory.  If it is, it will search for an index file
+    if os.path.isdir(f"templates/{query}"):
+        if os.path.isfile(f"templates/{query}/index.md"):
+            return render_md(f"{query}/index.md")
+        if os.path.isfile(f"templates/{query}/index.j2"):
+            return render_jinja(f"{query}/index.j2")
+        if os.path.isfile(f"templates/{query}/index.html"):
+            return render_html(f"{query}/index.html")
+
+    # No good file found, return 404
+    return http_error(404)
 
 def safe_strip(value: str | None) -> str:
     if isinstance(value, str):
@@ -54,11 +159,7 @@ def path_sort(prefix: str, items: list[str]) -> list[str]:
 
 @app.route("/")
 def index():
-    return safe_render_template('index.html')
-
-@app.route("/bucketlist/<quarter>")
-def bucketlist(quarter):
-    return safe_render_template(f"/bucketlist/{quarter}.html")
+    return render_jinja('index.j2')
 
 @app.route("/javadocs/<project>")
 @app.route("/javadocs/<project>/")
@@ -70,14 +171,6 @@ def javadocs(project, path=""):
     if path == "":
         return send_from_directory(f"javadocs/{project}/", "index.html")
     return send_from_directory(f"javadocs/{project}", path)
-
-@app.route("/deps/<project>")
-def deps(project):
-    return flask.render_template(f"/deps/{project.lower()}.html")
-
-@app.route("/plugins/<project>")
-def plugins(project):
-    return flask.render_template(f"/plugins/{project.lower()}.html")
 
 @app.route("/resume.pdf")
 def resume():
@@ -91,7 +184,7 @@ def list_directory(subpath=""):
     abs_path = os.path.join('/mnt/drive1/files', subpath)
 
     if not os.path.exists(abs_path):
-        return render_template("errors/404.html"), 400
+        return render_template("errors/404.j2"), 400
 
     if os.path.isfile(abs_path):
         # If it's a file, serve it for download
@@ -106,7 +199,7 @@ def list_directory(subpath=""):
                 is_allowed = True
                 break
         if not is_allowed:
-            return render_template("errors/404.html"), 404
+            return http_error(404)
 
     # Get a list of files and subdirectories
     longest_name = 0
@@ -149,7 +242,7 @@ def list_directory(subpath=""):
         else:
             labels[i] += f"{items[i]['name'].ljust(longest_name, ' ')}</a>  {items[i]['last_modified']}  {items[i]['size'].rjust(9, ' ')}"
 
-    return render_template('directory_listing.html', labels=labels, current_path=subpath)
+    return render_template('directory_listing.j2', labels=labels, current_path=subpath)
 
 @app.get("/cnuclasses")
 def cnuclasses():
@@ -178,32 +271,9 @@ def cnuclasses():
     try:
         classes = soup.tbody.find_all("tr")
     except Exception:
-        return render_template("errors/503.html", message="The schedule of classes decided to die for some reason.  Please wait for them to fix the issue.")
+        return http_error(503, message="The schedule of classes decided to die for some reason.  Please wait for them to fix the issue.")
 
-    return render_template("cnuclasses.html", classes=classes, safe_strip=safe_strip)
-
-@app.get("/<query>")
-def query(query):
-    if (query.endswith(".html")):
-        return safe_render_template(query)
-
-    return safe_render_template(f"{query}.html")
-
-@app.get("/witchlight/<session>")
-def dnd_witchlight(session):
-    if (session.endswith(".html")):
-        return safe_render_template(f"witchlight/{session}")
-
-    return safe_render_template(f"witchlight/{session}.html")
-
-# Route to handle CTF viewer
-@app.get("/ctfs/<string:ctf>", defaults={"route": None})
-@app.get("/ctfs/<string:ctf>/<string:route>")
-def ctfs(ctf, route):
-    if route == None:
-        route = "index"
-
-    return render_template(f"/ctfs/{ctf}/{route}.html")
+    return render_template("cnuclasses.j2", classes=classes, safe_strip=safe_strip)
 
 # Run app
 if __name__ == "__main__":

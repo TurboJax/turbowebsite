@@ -1,9 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block title %}Service{% endblock %}
-{% block header %}Community Service{% endblock %}
-
-{% block md %}
+Service
+Community Service
 - 03/15/2025 -- Removed trees from the Saint Michaels parking lot
 - 02/25/2024 -- Blue Cheese Week 0
 - 10/07/2023 -- Math Science Innovation Center Robotics Demo
@@ -24,4 +20,3 @@
 - 06/13/2021 -- My Eagle Project Day 1
 - 04/17/2021 -- T. Brady Saunders Trail Clean Up
 - 12/19/2020 -- Wreaths Across America
-{% endblock %}

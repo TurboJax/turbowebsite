@@ -1,8 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block header %}{% block title %}CYBR 198 Challenges{% endblock %}{% endblock %}
-
-{% block md %}
+CYBR 198 Challenges
+CYBR 198 Challenges
 Resolution Over Isotopes  
 > numeric value to 3 decimal places  
 > big num / small num  
@@ -255,4 +252,3 @@ I am Grep (Forensics)
 > So it's a large file, but I kinda opened it and saw the flag immediately.  
 > You are intended to use the grep command to search for the keyword "flag", or search for it with a gui.  
 > The flag is "THIS-IS_THE-FLAG{grep_and_you_will_find_42783683}"  
-{% endblock %}

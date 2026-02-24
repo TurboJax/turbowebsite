@@ -1,4 +1,4 @@
-{% extends 'base/base.html' %}
+{% extends 'base/base.j2' %}
 
 {% block head %}
 <!-- Markdown Interpreter -->
@@ -6,8 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<zero-md>
-    <script type="text/markdown">{% block md %}{% endblock %}</script>
+<zero-md src="{% block mdurl %}{% endblock %}">
     <template data-append>
         <link rel="stylesheet" href="/static/css/md.css" />
     </template>

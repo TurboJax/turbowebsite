@@ -1,9 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block title %}PluginPlayground{% endblock %}
-{% block header %}PluginPlayground{% endblock %}
-
-{% block md %}
+PluginPlayground
+PluginPlayground
 # PluginPlayground
 
 # THIS IS NOT AN ACTUAL PLUGIN AND SHOULD ONLY BE USED FOR DEMONSTRATIONS!  IT IS NOT BUILT TO COMPILE!
@@ -12,4 +8,3 @@
 ## Note that this is in very early development and we don't have much stuff made right now.
 
 [![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy/available/github_vector.svg)](https://git.turbojax.org/PluginPlayground)
-{% endblock %}

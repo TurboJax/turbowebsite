@@ -1,8 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block header %}{% block title %}Walker Challenges{% endblock %}{% endblock %}
-
-{% block md %}
+Walker Challenges
+Walker Challenges
 Skills Challenges:
 - Speed:
     - Unity Force: Navigate timed obstacle courses at maximum velocity. React instantly to route changes while avoiding collisions.
@@ -190,4 +187,3 @@ Mission 9:
     - Checkpoint 1: <Find>
     - Creator Circle: <Find>
     - Unity Force: <Find>
-{% endblock %}

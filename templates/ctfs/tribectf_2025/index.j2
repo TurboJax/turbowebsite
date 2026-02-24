@@ -1,7 +1,6 @@
-{% extends 'base/base.html' %}
+{% extends 'base/base.j2' %}
 
-{% block title %}TribeCTF 2025{% endblock %}
-{% block header %}TribeCTF 2025{% endblock %}
+{% block title %}{% block header %}TribeCTF 2025{% endblock %}{% endblock %}
 
 {% block content %}
 <a href="/ctfs/tribectf_2025/challenges">Challenges</a>

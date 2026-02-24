@@ -1,9 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block title %}Work{% endblock %}
-{% block header %}Work History{% endblock %}
-
-{% block md %}
+Work
+Work History
 ## Intern at Integra Realty Resources
 Integra Realty Resources | May 2024 - July 2024  
 - Collect data on building permits and land sales throughout central Virginia.
@@ -22,4 +18,3 @@ Chick-Fil-A | June 2023 - Present
 Self | May 2021 - Present  
 - Perform mowing, trimming, and edging of multiple lawns.
 - Remove debris and waste from outdoor areas.
-{% endblock %}

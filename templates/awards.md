@@ -1,9 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block title %}Awards{% endblock %}
-{% block header %}Awards and Achievements{% endblock %}
-
-{% block md %}
+Awards
+Awards and Achievements
 - Accepted into the CNU President's Leadership Program
 - Qualified for FRC Worlds on Blue Cheese Robotics in 2025
 - Qualified for District Championships four times on Blue Cheese Robotics
@@ -22,4 +18,3 @@
 - Qualified for States in marching band
 - Qualified for TSA Nationals and VEX States twice in middle school
 - 1st Place at VEX IQ Technospere
-{% endblock %}

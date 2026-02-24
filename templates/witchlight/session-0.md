@@ -1,9 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block title %}Witchlight{% endblock %}
-{% block header %}Session 1{% endblock %}
-
-{% block md %}
+Witchlight
+Session 1
 Goals:  
 - Find this kenku and figure out how to get it to undo whatever it has done.  
 - Find Palasha.  She may know about the kenku. (If the kenku is known around the carnival, then Dirla may know about her too.  She may be a helpful ally on the land.)  
@@ -32,4 +28,3 @@ Ticket Tracker:
 - Joe: 6  
 - Zahira: 0 (Hasn't started)  
 - Scott: 6  
-{% endblock %}

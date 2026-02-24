@@ -1,9 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block title %}TribeCTF 2025 Writeup{% endblock %}
-{% block header %}TribeCTF 2025 Writeup{% endblock %}
-
-{% block md %}
+TribeCTF 2025 Writeup
+TribeCTF 2025 Writeup
 ## Key Witness
 > The challenge gives us two pcap files.  One is Jeff's network traffic, the other is a monitoring of his USB keyboard inputs.  
 > Inspecting the network traffic, you can see he visits a file server with 4 files uploaded to it (Captures 25 and 29).  Three are motivational cat pictures, the fourth is a zip file named "SuperSecretStash.zip"  
@@ -53,4 +49,3 @@ Coles pro tip
 ## GOPR -- SOLVABLE?
 ## Griffin's Game -- UNSOLVABLE
 ## logic_level -- SOLVABLE
-{% endblock %}

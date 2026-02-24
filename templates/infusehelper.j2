@@ -1,0 +1,15 @@
+{% extends 'base/base.j2' %}
+
+{% block title %}{% block header %}Infuse SMP Data Updater 1.8.0 -> 2.3.0{% endblock %}{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<form method="POST" action="" enctype="multipart/form-data">
+    <h2>Place playerdata.yml here:</h2>
+    <p><input type="file" id="data_input" name="playerdata.yml" accept=".yml,.yaml" /></p>
+    <br>
+    <p><input type="submit" id="data_submit" value="Submit file" /></p>
+</form>
+{% endblock %}

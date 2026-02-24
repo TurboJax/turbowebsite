@@ -1,6 +1,5 @@
-{% extends 'base/remote_md.html' %}
+{% extends 'base/remote_md.j2' %}
 
-{% block title %}TurboLogger{% endblock %}
-{% block header %}TurboLogger{% endblock %}
+{% block title %}{% block header %}TurboLogger{% endblock %}{% endblock %}
 
 {% block mdurl %}https://raw.githubusercontent.com/TurboJax/TurboLogger/refs/heads/main/README.md?token=$(date%20+%s){% endblock %}

@@ -1,9 +1,5 @@
-{% extends 'base/inline_md.html' %}
-
-{% block title %}TribeCTF 2025 Challenges{% endblock %}
-{% block header %}TribeCTF 2025 Challenges{% endblock %}
-
-{% block md %}
+TribeCTF 2025 Challenges
+TribeCTF 2025 Challenges
 ## The First Flag
 > Every flag in this competition follows the format tribectf{super\_secret\_flag}.  
 > Your mission for each challenge is to discover and submit the flag. But before you dive in, there's something you must do: read the rules.  
@@ -143,4 +139,3 @@
 > **FILES:**  
 > - [LogicLevel.pdf](https://turbojax.org/static/ctfthings/LogicLevel.pdf)
 > - [streams.csv](https://turbojax.org/static/ctfthings/streams.csv)
-{% endblock %}
