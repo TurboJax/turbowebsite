@@ -14,6 +14,9 @@ import errno
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "Not Found")
 
+# Preventing file uploads larger than 50MB
+app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
+
 allowed_dirs = os.getenv("ALLOWED_DIRS", "").split(",")
 
 if app.secret_key == "Not Found":
@@ -286,6 +289,59 @@ def cnuclasses():
         return http_error(503, message="The schedule of classes decided to die for some reason.  Please wait for them to fix the issue.")
 
     return render_template("cnuclasses.j2", classes=classes, safe_strip=safe_strip)
+
+# Backend process for upgrading infuse player data
+@app.post("/infusehelper")
+def infusehelper():
+    if "playerdata.yml" not in request.files:
+        return "no playerdata", 404
+
+    file = request.files["playerdata.yml"]
+
+    # Reading the file
+    data = file.read().decode("utf8")
+
+    # Making the changes to the playerdata
+    data = data.replace("§4Strength Effect", "strength")
+    data = data.replace("§4Augmented Strength Effect", "aug_strength")
+    data = data.replace("§eThunder Effect", "thunder")
+    data = data.replace("§eAugmented Thunder Effect", "aug_thunder")
+    data = data.replace("§#E8BD74Speed Effect", "speed")
+    data = data.replace("§#E8BD74Augmented Speed Effect", "aug_speed")
+    data = data.replace("§cRegeneration Effect", "regen")
+    data = data.replace("§cAugmented Regeneration Effect", "aug_regen")
+    data = data.replace("§9Ocean Effect", "ocean")
+    data = data.replace("§9Augmented Ocean Effect", "aug_ocean")
+    data = data.replace("§5Invisibility Effect", "invis")
+    data = data.replace("§5Augmented Invisibility Effect", "aug_invis")
+    data = data.replace("§cHeart Effect", "heart")
+    data = data.replace("§cAugmented Heart Effect", "aug_heart")
+    data = data.replace("§6Haste Effect", "haste")
+    data = data.replace("§6Augmented Haste Effect", "aug_haste")
+    data = data.replace("§bFrost Effect", "frost")
+    data = data.replace("§bAugmented Frost Effect", "aug_frost")
+    data = data.replace("§#E85720Fire Effect", "fire")
+    data = data.replace("§#E85720Augmented Fire Effect", "aug_fire")
+    data = data.replace("§#BEA3CAFeather Effect", "feather")
+    data = data.replace("§#BEA3CAAugmented Feather Effect", "aug_feather")
+    data = data.replace("§aEmerald Effect", "emerald")
+    data = data.replace("§aAugmented Emerald Effect", "aug_emerald")
+    data = data.replace("§5Ender Effect", "ender")
+    data = data.replace("§5Augmented Ender Effect", "aug_ender")
+    data = data.replace("§5Apophis Effect", "apophis")
+    data = data.replace("§5Augmented Apophis Effect", "aug_apophis")
+    data = data.lower()
+
+    # Saving the playerdata to a file
+    with open(".tmp/playerdata.yml", "w") as file:
+        file.write(data)
+
+    retval = send_from_directory(".tmp", "playerdata.yml")
+
+    # Removing the file
+    os.remove(".tmp/playerdata.yml")
+
+    return retval
 
 # Running the app
 if __name__ == "__main__":
