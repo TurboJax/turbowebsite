@@ -1,5 +1,3 @@
-# TODO: Add image/video/document viewers to /files so you don't need to download everything.
-
 from flask import Flask, flash, request, render_template, send_from_directory, redirect, url_for
 from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
@@ -261,7 +259,6 @@ def list_directory(subpath=""):
 
 @app.get("/cnuclasses")
 def cnuclasses():
-    # TODO: Add a form that allows people to specify the semester to get info from.
     # When finding `semesterlist` values in the future, use the year but use the year + 1 if it is the fall semester.  XX is 00 for fall semester, 10 for spring semester, 20 for may term, 31 for summer term 1, and 32 for summer term 2.
 
     session = requests.Session()

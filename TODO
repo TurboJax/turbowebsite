@@ -3,6 +3,9 @@ TODO list!
 In General
 - Figure out how to remove the scroll bar.  It doesn't need to be everywhere.
 
+Files
+- Add image/video/document viewers to /files so you don't need to download everything.
+
 CNU Classes
 - Make the list more searchable. (add more options)
 - Figure out a better way of getting the data than collecting it all when the website loads.
@@ -10,6 +13,7 @@ CNU Classes
 - Make filters persist on refresh.
 - Rather than requiring users to refresh the page to update data, maybe try having the data update on a set interval, or add a button for it.
   - This would mean moving the functionality of the jinja template to a javascript program
+- Add a way to change which semester data is picked for.
 
 CTFS
 - Make a better homepage for the ctf
