@@ -107,7 +107,7 @@ def render_md(md_path: str) -> str | tuple:
         return http_error(404)
     except TemplateNotFound:
         # 404 because the template could not be found.  This is a major issue
-        print("Could not find the core \"util/raw_md.j2\" template!")
+        app.logger.info("Could not find the core \"util/raw_md.j2\" template!")
         return http_error(404)
 
 def filesize_fmt(num: float) -> str:
