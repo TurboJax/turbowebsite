@@ -138,9 +138,10 @@ def path_sort(dir: str, paths: list[str]) -> list[str]:
     dirs = []
     files = []
     for path in paths:
-        if os.path.isdir(dir + path):
+        abs_path = os.path.join(dir, path)
+        if os.path.isdir(abs_path):
             dirs.append(path)
-        elif os.path.isfile(dir + path):
+        elif os.path.isfile(abs_path):
             files.append(path)
 
     dirs.sort()
