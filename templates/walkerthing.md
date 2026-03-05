@@ -1,6 +1,6 @@
 Walker Challenges
 Walker Challenges
-Skills Challenges:
+## Skills Challenges:
 - Speed:
     - Unity Force: Navigate timed obstacle courses at maximum velocity. React instantly to route changes while avoiding collisions.
     - Creator Circle: Navigate timed obstacle courses at maximum velocity. React instantly to route changes while avoiding collisions.
@@ -14,7 +14,7 @@ Skills Challenges:
     - Creator Circle: Solve adaptive tactical puzzles under pressure. Analyze patterns and predict enemy movements.
     - Checkpoint 1: Solve adaptive tactical puzzles under pressure.  Analyze patterns and predict enemy movements.
 
-Mission 1:
+## Mission 1:
 - Objective:
     - Checkpoint 1: Deploy your EXPLOR-8 to Adventureverse and recharge for the battles ahead.  Only with full strength can the tribe stand against Red Nexus.
     - Creator Circle: Return your CRE-AV8s to the Creator Compound before collapse. If the drones fall, so does the vision of the Circle.
@@ -23,7 +23,8 @@ Mission 1:
     - Checkpoint 1: Pilot your EXPLOR-8 to Adventureverse.  Complete recharge sequence.
     - Creator Circle: Pilot your CRE-AV8 to Creator Compound. Complete recharge sequence.
     - Unity Force: Pilot your AV8 to Unity Mountain. Complete recharge sequence.
-Mission 2:
+
+## Mission 2:
 - Objective:
     - Checkpoint 1: Run new code on your EXPLOR-8 to unlock super speed.  This is the key to temporal jumps - and the prophecy itself.
     - Creator Circle: Design blueprints for a defensive weapon system, crafted with creativity and care. It’s insurance against the violence Red Nexus forces upon us.
@@ -44,7 +45,8 @@ Mission 2:
     - Checkpoint 1: Execute new code.  Unlock super-speed capability.
     - Creator Circle: Finalize weapon system blueprints for defensive deployment.
     - Unity Force: Complete full object scan and reproduce with precision.
-Mission 3:
+
+## Mission 3:
 - Objective:
     - Checkpoint 1: Use your EXPLOR-8’s new speed to travel back to 1000 BCE. Seek the Ancient Walkers, but tread carefully — the past can change you.
     - Creator Circle: Camouflage Walkerworld’s entrance until it disappears into the landscape. If Red Nexus finds us, our sanctuary is lost.
@@ -65,7 +67,8 @@ Mission 3:
     - Checkpoint 1: Travel back to year 1000 BCE.
     - Creator Circle: Build camouflage over Walkerworld's entrance.
     - Unity Force: Infiltrate Red Nexus HQ undetected.
-Mission 4:
+
+## Mission 4:
 - Objective:
     - Checkpoint 1: Search the Ancient Era for the prophecy disc and recover its data. The disc holds answers that may define our fate.
     - Creator Circle: Construct a storage hall to safeguard your weapons. If the camouflage fails, the arsenal must be ready.
@@ -86,104 +89,125 @@ Mission 4:
     - Checkpoint 1: Locate prophecy disc and recover data.
     - Creator Circle: Create storage hall for weapon system.
     - Unity Force: Scan entire Red Nexus headquarters.
-Mission 5:
+## Mission 5:
 - Objective:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: Run a decipher protocol on the prophecy disc to reveal its secrets. What you find could change everything.
+    - Creator Circle: Build the annual reception pavilion for the Creator Games. Tradition must endure even in times of war.
     - Unity Force: Reproduce a portable camp to hold position until reinforcements arrive. Tonight, the mountain becomes our fortress.
 - Brief 5.1:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: Run pattern recognition algorithms.
+    - Creator Circle: Plan pavilion foundation and structural layout.
     - Unity Force: Scout defensible position for camp setup.
 - Brief 5.2:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: Add traditional Creator Circle elements.
     - Unity Force: Scan portable shelter components.
 - Brief 5.3:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: Design ceremonial pavilion architecture.
     - Unity Force: Test structural integrity under field conditions.
 - Brief 5.4:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: Build annual WCG Reception Pavilion.
     - Unity Force: Reproduce portable camp space.
-Mission 6:
+## Mission 6:
 - Objective:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Double your supplies and equip the Unity Convoy for the frontline. Our fighters cannot hold without this lifeline.
 - Brief 6.1:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Scan essential supplies for duplication.
 - Brief 6.2:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Load and secure convoy vehicles.
 - Brief 6.3:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Double inventory and equip Unity Convoy.
-Mission 7:
+## Mission 7:
 - Objective:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Practice with weapons and armor to prepare for the coming battle. The strike date is set — sharpen your edge.
 - Brief 7.1:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Equip drones with combat loadouts.
 - Brief 7.2:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Run targeting calibration exercises.
 - Brief 7.3:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Run defensive measure tests.
 - Brief 7.4:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Practice and simulate combat with weapons and armor for battle.
-Mission 8:
+## Mission 8:
 - Objective:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Build a training system inside the dome to harden your tribe. Obstacles and enemies here will decide survival later.
 - Brief 8.1:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Scan Red Nexus combat tactics from HQ data.
 - Brief 8.2:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Reproduce enemy RX-8 behavior patterns for training.
 - Brief 8.3:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Build physical obstacle course with combat scenarios.
 - Brief 8.4:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
     - Unity Force: Create training system inside dome - obstacles and enemies.
-Mission 9:
+## Mission 9:
 - Objective:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
-    - Unity Force: <Find>
-- Brief 7.1:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
-    - Unity Force: <Find>
-- Brief 7.2:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
-    - Unity Force: <Find>
-- Brief 7.3:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
-    - Unity Force: <Find>
-- Brief 7.4:
-    - Checkpoint 1: <Find>
-    - Creator Circle: <Find>
-    - Unity Force: <Find>
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+- Brief 9.1:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+- Brief 9.2:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+- Brief 9.3:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+- Brief 9.4:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+## Mission 10:
+- Objective:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+- Brief 10.1:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+- Brief 10.2:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+- Brief 10.3:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
+- Brief 10.4:
+    - Checkpoint 1: \<Find>
+    - Creator Circle: \<Find>
+    - Unity Force: \<Find>
