@@ -2,6 +2,7 @@ from flask import Flask, flash, request, render_template, send_from_directory, r
 from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
 from jinja2 import TemplateNotFound
+from dotenv import load_dotenv
 import jinja2
 import mimetypes
 import requests
@@ -10,6 +11,8 @@ import os
 import sys
 import typing
 import errno
+
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "Not Found")
