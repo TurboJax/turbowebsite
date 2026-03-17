@@ -20,8 +20,6 @@ allowed_dirs = os.getenv("ALLOWED_DIRS", "").split(",")
 if app.secret_key == "Not Found":
     sys.exit(1)
 
-env = app.jinja_env
-
 def http_error(code: int, **kwargs) -> tuple:
     """
     Gets the page for the http error code.
@@ -49,7 +47,9 @@ def render_jinja(template_path: str, **kwargs) -> str | tuple:
     """
     try:
         # Rendering the template
-        return env.get_template(template_path).render(**kwargs)
+        loader = jinja2.FileSystemLoader(searchpath=os.path.dirname(template_path))
+        env = jinja2.Environment(loader=loader)
+        return env.get_template(os.path.basename(template_path)).render(**kwargs)
     except TemplateNotFound:
         # 404 because the template could not be found
         return http_error(404)
@@ -67,7 +67,7 @@ def render_html(html_path: str) -> str | tuple:
     """
     try:
         # Loading the html
-        with open(f"templates/{html_path}", "r") as file:
+        with open(html_path, "r") as file:
             data = file.read()
         return data
     except FileNotFoundError:
@@ -92,10 +92,10 @@ def render_md(md_path: str) -> str | tuple:
     """
     try:
         # Getting the markdown template
-        template = env.get_template("util/raw_md.j2")
+        template = app.jinja_env.get_template("util/raw_md.j2")
 
         # Reading the markdown file
-        with open(f"templates/{md_path}", "r") as file:
+        with open(md_path, "r") as file:
             title = file.readline()
             header = file.readline()
             data = file.read()
@@ -156,20 +156,20 @@ def path_sort(dir: str, paths: list[str]) -> list[str]:
 def query(query=""):
     # Checking if the query points to a file the server is equipped to handle
     if os.path.isfile(f"templates/{query}.md"):
-        return render_md(f"{query}.md")
+        return render_md(f"templates/{query}.md")
     if os.path.isfile(f"templates/{query}.j2"):
-        return render_jinja(f"{query}.j2")
+        return render_jinja(f"templates/{query}.j2")
     if os.path.isfile(f"templates/{query}.html"):
-        return render_html(f"{query}.html")
+        return render_html(f"templates/{query}.html")
 
     # Checking if the query is a directory.  If it is, it will search for an index file
     if os.path.isdir(f"templates/{query}"):
         if os.path.isfile(f"templates/{query}/index.md"):
-            return render_md(f"{query}/index.md")
+            return render_md(f"templates/{query}/index.md")
         if os.path.isfile(f"templates/{query}/index.j2"):
-            return render_jinja(f"{query}/index.j2")
+            return render_jinja(f"templates/{query}/index.j2")
         if os.path.isfile(f"templates/{query}/index.html"):
-            return render_html(f"{query}/index.html")
+            return render_html(f"templates/{query}/index.html")
 
     # No good file found, return 404
     return http_error(404)
