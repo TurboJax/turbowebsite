@@ -48,9 +48,9 @@ def render_jinja(template_path: str, **kwargs) -> str | tuple:
     """
     try:
         # Rendering the template
-        loader = jinja2.FileSystemLoader(["./templates", os.path.dirname(template_path)])
+        loader = jinja2.FileSystemLoader(["./templates", "/"])
         env = jinja2.Environment(loader=loader)
-        return env.get_template(os.path.basename(template_path)).render(**kwargs)
+        return env.get_template(template_path).render(**kwargs)
     except TemplateNotFound:
         # 404 because the template could not be found
         return http_error(404)
