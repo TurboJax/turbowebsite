@@ -203,7 +203,7 @@ def list_directory(subpath=""):
 
     if os.path.isfile(abs_path):
         # If it's a file, serve it for download
-        return send_from_directory(os.path.dirname(abs_path), os.path.basename(abs_path), as_attachment=True)
+        return redirect(f"/raw_files/{subpath}")
 
     if subpath.startswith("priv"):
         is_allowed = False
@@ -258,29 +258,6 @@ def list_directory(subpath=""):
             labels[i] += f"{items[i]['name'].ljust(longest_name, ' ')}</a>  {items[i]['last_modified']}  {items[i]['size'].rjust(9, ' ')}"
 
     return render_template('directory_listing.j2', labels=labels, current_path=subpath)
-
-# Raw file server.  Does not support directories
-@app.get('/raw_files')
-@app.get('/raw_files/')
-@app.get('/raw_files/<path:subpath>')
-def serve_file(subpath=""):
-    """
-    Returns a raw file from the server.  Fails if the file does not exist or is a directory
-    """
-    subpath = str(subpath)
-    abs_path = os.path.join('/mnt/drive1/files', subpath)
-    app.logger.info(subpath)
-    app.logger.info(abs_path)
-    app.logger.info(os.path.exists(abs_path))
-    app.logger.info(os.path.isdir(abs_path))
-
-    if not os.path.exists(abs_path):
-        return render_template("errors/404.j2"), 404
-
-    if os.path.isdir(abs_path):
-        return render_template("errors/404.j2"), 404
-
-    return send_from_directory(os.path.dirname(abs_path), os.path.basename(abs_path), as_attachment=True)
 
 @app.get("/cnuclasses")
 def cnuclasses():
