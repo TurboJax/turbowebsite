@@ -1,0 +1,7 @@
+{% extends 'base/base.j2' %}
+
+{% block title %}{{ file }}{% endblock %}
+{% block header %}/files/{{ file }}{% endblock %}
+{% block content %}
+<{{ filetype }} src="/raw_files/{{ file }}"/>
+{% endblock %}
