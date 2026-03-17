@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.secret_key = os.getenv("FLASK_SECRET_KEY", "Not Found")
 
 # Preventing file uploads larger than 50MB
-app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
+#app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
 
 allowed_dirs = os.getenv("ALLOWED_DIRS", "").split(",")
 
