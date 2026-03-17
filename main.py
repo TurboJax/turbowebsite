@@ -3,6 +3,7 @@ from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
 from jinja2 import TemplateNotFound
 import jinja2
+import mimetypes
 import requests
 import datetime
 import os
@@ -199,9 +200,33 @@ def list_directory(subpath=""):
     abs_path = os.path.join('/mnt/drive1/files', subpath)
 
     if not os.path.exists(abs_path):
-        return render_template("errors/404.j2"), 400
+        return render_template("errors/404.j2"), 404
 
+    # If it is a file, try to load it or download it
     if os.path.isfile(abs_path):
+        # Render HTML
+        if abs_path.endswith(".html"):
+            return render_html(abs_path)
+
+        # Render MD
+        if abs_path.endswith(".md"):
+            return render_md(abs_path)
+
+        # Render j2 (retains context from this app)
+        if abs_path.endswith(".j2"):
+            return render_jinja(abs_path)
+
+        # Getting the mimetype
+        mimetype, encoding = mimetypes.guess_type(abs_path)
+        if mimetype is None:
+            mimetype = "none"
+
+        filetype = mimetype.split("/")[0]
+
+        # Render image, audio, or video
+        if filetype == "image" or filetype == "video" or filetype == "audio":
+            return render_jinja("util/render_file.j2", filetype=filetype, file=subpath)
+
         # If it's a file, serve it for download
         return redirect(f"/raw_files/{subpath}")
 
