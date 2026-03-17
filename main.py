@@ -2,6 +2,7 @@ from flask import Flask, flash, request, render_template, send_from_directory, r
 from werkzeug.utils import secure_filename
 from bs4 import BeautifulSoup
 from jinja2 import TemplateNotFound
+import jinja2
 import requests
 import datetime
 import os
@@ -47,7 +48,7 @@ def render_jinja(template_path: str, **kwargs) -> str | tuple:
     """
     try:
         # Rendering the template
-        loader = jinja2.FileSystemLoader(searchpath=os.path.dirname(template_path))
+        loader = jinja2.FileSystemLoader(["./templates", os.path.dirname(template_path)])
         env = jinja2.Environment(loader=loader)
         return env.get_template(os.path.basename(template_path)).render(**kwargs)
     except TemplateNotFound:
@@ -158,7 +159,7 @@ def query(query=""):
     if os.path.isfile(f"templates/{query}.md"):
         return render_md(f"templates/{query}.md")
     if os.path.isfile(f"templates/{query}.j2"):
-        return render_jinja(f"templates/{query}.j2")
+        return render_jinja(f"{query}.j2")
     if os.path.isfile(f"templates/{query}.html"):
         return render_html(f"templates/{query}.html")
 
@@ -167,7 +168,7 @@ def query(query=""):
         if os.path.isfile(f"templates/{query}/index.md"):
             return render_md(f"templates/{query}/index.md")
         if os.path.isfile(f"templates/{query}/index.j2"):
-            return render_jinja(f"templates/{query}/index.j2")
+            return render_jinja(f"{query}/index.j2")
         if os.path.isfile(f"templates/{query}/index.html"):
             return render_html(f"templates/{query}/index.html")
 
