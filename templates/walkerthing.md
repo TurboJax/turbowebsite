@@ -1,213 +1,337 @@
 Walker Challenges
 Walker Challenges
-## Skills Challenges:
-- Speed:
-    - Unity Force: Navigate timed obstacle courses at maximum velocity. React instantly to route changes while avoiding collisions.
-    - Creator Circle: Navigate timed obstacle courses at maximum velocity. React instantly to route changes while avoiding collisions.
-    - Checkpoint 1: Push EXPLOR-8 through time corridors at maximum speed.  Navigate shifting temporal streams while maintaining velocity.
-- Precision:
-    - Unity Force: Lock onto moving targets with perfect accuracy. Track objectives while filtering out decoys and interference.
-    - Creator Circle: Build intricate structures requiring exact measurements. Every millimeter counts under intense time pressure.
-    - Checkpoint 1: Lock onto moving targets with perfect accuracy.  Track objectives while filtering out decoys and interference.
-- Intelligence:
-    - Unity Force: Scan enemy tactics and execute perfect counter-strategies. Process battlefield data to reproduce winning patterns.
-    - Creator Circle: Solve adaptive tactical puzzles under pressure. Analyze patterns and predict enemy movements.
-    - Checkpoint 1: Solve adaptive tactical puzzles under pressure.  Analyze patterns and predict enemy movements.
-
-## Mission 1:
-- Objective:
-    - Checkpoint 1: Deploy your EXPLOR-8 to Adventureverse and recharge for the battles ahead.  Only with full strength can the tribe stand against Red Nexus.
-    - Creator Circle: Return your CRE-AV8s to the Creator Compound before collapse. If the drones fall, so does the vision of the Circle.
-    - Unity Force: Send your AV8 back to Unity Mountain to recharge and recover. Without restored cores, the fight ends here.
+## Mission 1
+- Objective
+  - C1: Deploy your EXPLOR-8 to Adventureverse and recharge for the battles ahead. Only with full strength can the tribe stand against Red Nexus.
+  - CC: Return your CRE-AV8s to the Creator Compound before collapse. If the drones fall, so does the vision of the Circle.
+  - UF: Send your AV8 back to Unity Mountain to recharge and recover. Without restored cores, the fight ends here.
 - Brief 1.1:
-    - Checkpoint 1: Pilot your EXPLOR-8 to Adventureverse.  Complete recharge sequence.
-    - Creator Circle: Pilot your CRE-AV8 to Creator Compound. Complete recharge sequence.
-    - Unity Force: Pilot your AV8 to Unity Mountain. Complete recharge sequence.
+  - C1: Pilot your EXPLOR-8 to Adventureverse. Complete recharge sequence.
+  - CC: Pilot your CRE-AV8 to Creator Compound. Complete recharge sequence.
+  - UF: Pilot your AV8 to Unity Mountain. Complete recharge sequence.
 
-## Mission 2:
-- Objective:
-    - Checkpoint 1: Run new code on your EXPLOR-8 to unlock super speed.  This is the key to temporal jumps - and the prophecy itself.
-    - Creator Circle: Design blueprints for a defensive weapon system, crafted with creativity and care. It’s insurance against the violence Red Nexus forces upon us.
-    - Unity Force: Push your AV8 to scan and reproduce a massive object with flawless precision. Prove it can handle the heavy load needed for infiltration.
+## Mission 2
+- Objective
+  - C1: Run new code on your EXPLOR-8 to unlock super-speed. This is the key to temporal jumps — and the prophecy itself.
+  - CC: Design blueprints for a defensive weapon system, crafted with creativity and care. It’s insurance against the violence Red Nexus forces upon us.
+  - UF: Push your AV8 to scan and reproduce a massive object with flawless precision. Prove it can handle the heavy load needed for infiltration.
 - Brief 2.1:
-    - Checkpoint 1: Analyze temporal mechanics in EXPLOR-8 engine.
-    - Creator Circle: Sketch initial defensive weapon concepts.
-    - Unity Force: Calibrate AV8 scanning array for maximum precision.
+  - C1: Analyze temporal mechanics in EXPLOR-8 engine.
+  - CC: Research Red Nexus offensive capabilities. Identify weaknesses.
+  - UF: Calibrate AV8 scanning array for maximum precision.
 - Brief 2.2:
-    - Checkpoint 1: Write acceleration protocol subroutines.
-    - Creator Circle: Research Red Nexus offensive capabilities. Identify weaknesses.
-    - Unity Force: Identify large-scale target for replication test.
+  - C1: Write acceleration protocol subroutines.
+  - CC: Sketch initial defensive weapon concepts.
+  - UF: Identify large-scale target for replication test.
 - Brief 2.3:
-    - Checkpoint 1: Test burst speed in controlled environment.
-    - Creator Circle: Refine blueprints using CRE-AV8 visualization.
-    - Unity Force: Execute preliminary scan passes. Build material database.
+  - C1: Test burst speed in controlled environment.
+  - CC: Refine blueprints using CRE-AV8 visualization.
+  - UF: Execute preliminary scan passes. Build material database.
 - Brief 2.4:
-    - Checkpoint 1: Execute new code.  Unlock super-speed capability.
-    - Creator Circle: Finalize weapon system blueprints for defensive deployment.
-    - Unity Force: Complete full object scan and reproduce with precision.
+  - C1: Execute new code. Unlock super-speed capability.
+  - CC: Finalize weapon system blueprints for defensive deployment.
+  - UF: Complete full object scan and reproduce with precision.
 
-## Mission 3:
-- Objective:
-    - Checkpoint 1: Use your EXPLOR-8’s new speed to travel back to 1000 BCE. Seek the Ancient Walkers, but tread carefully — the past can change you.
-    - Creator Circle: Camouflage Walkerworld’s entrance until it disappears into the landscape. If Red Nexus finds us, our sanctuary is lost.
-    - Unity Force: Infiltrate Red Nexus HQ unseen — stealth is the only way in. Slip past their gates and keep the guards distracted while your drones advance.
+## Mission 3
+- Objective
+  - C1: Use your EXPLOR-8’s new speed to travel back to 1000 BCE. Seek the Ancient Walkers, but tread carefully — the past can change you.
+  - CC: Camouflage Walkerworld’s entrance until it disappears into the landscape. If Red Nexus finds us, our sanctuary is lost.
+  - UF: Infiltrate Red Nexus HQ unseen — stealth is the only way in. Slip past their gates and keep the guards distracted while your drones advance.
 - Brief 3.1:
-    - Checkpoint 1: Calculate temporal coordinates for 1000 BCE.
-    - Creator Circle: Survey Walkerworld entrance exposure points.
-    - Unity Force: Scout Red Nexus HQ perimeter. Map guard patterns.
+  - C1: Calculate temporal coordinates for 1000 BCE.
+  - CC: Survey Walkerworld entrance exposure points.
+  - UF: Scout Red Nexus HQ perimeter. Map guard patterns.
 - Brief 3.2:
-    - Checkpoint 1: Reinforce EXPLOR-8 hull for time stress.
-    - Creator Circle: Design adaptive camouflage pattern matrix.
-    - Unity Force: Identify security vulnerabilities in fence line.
+  - C1: Reinforce EXPLOR-8 hull for time stress.
+  - CC: Design adaptive camouflage pattern matrix.
+  - UF: Identify security vulnerabilities in fence line.
 - Brief 3.3:
-    - Checkpoint 1: Initialize chronometer stabilization field.
-    - Creator Circle: Test concealment effectiveness against drone sensors.
-    - Unity Force: Synchronize infiltration timing with guard rotations.
+  - C1: Initialize chronometer stabilization field.
+  - CC: Test concealment effectiveness against drone sensors.
+  - UF: Synchronize infiltration timing with guard rotations.
 - Brief 3.4:
-    - Checkpoint 1: Travel back to year 1000 BCE.
-    - Creator Circle: Build camouflage over Walkerworld's entrance.
-    - Unity Force: Infiltrate Red Nexus HQ undetected.
+  - C1: Travel back to year 1000 BCE.
+  - CC: Build camouflage over Walkerworld's entrance.
+  - UF: Infiltrate Red Nexus HQ undetected.
 
-## Mission 4:
-- Objective:
-    - Checkpoint 1: Search the Ancient Era for the prophecy disc and recover its data. The disc holds answers that may define our fate.
-    - Creator Circle: Construct a storage hall to safeguard your weapons. If the camouflage fails, the arsenal must be ready.
-    - Unity Force: Scan every corner of Red Nexus headquarters for intelligence. The more we uncover, the closer we come to striking back.
+## Mission 4
+- Objective
+  - C1: Search the Ancient Era for the prophecy disc and recover its data. The disc holds answers that may define our fate.
+  - CC: Construct a storage hall to safeguard your weapons. If the camouflage fails, the arsenal must be ready.
+  - UF: Scan every corner of Red Nexus headquarters for intelligence. The more we uncover, the closer we come to striking back
 - Brief 4.1:
-    - Checkpoint 1: Search Ancient City ruins for disc energy signature.
-    - Creator Circle: Select secure location within compound.
-    - Unity Force: Begin systematic AV8 scans of facility exterior walls.
+  - C1: Search Ancient City ruins for disc energy signature.
+  - CC: Select secure location within compound.
+  - UF: Begin systematic AV8 scans of facility exterior walls.
 - Brief 4.2:
-    - Checkpoint 1: Triangulate prophecy disc location.
-    - Creator Circle: Design reinforced storage architecture.
-    - Unity Force: Map internal structure and security systems.
+  - C1: Triangulate prophecy disc location.
+  - CC: Design reinforced storage architecture.
+  - UF: Map internal structure and security systems.
 - Brief 4.3:
-    - Checkpoint 1: Navigate secret pathways and tunnels, manouvering traps and obstacles.
-    - Creator Circle: Gather materials and begin foundation.
-    - Unity Force: Compile comprehensive facility blueprint.
+  - C1: Navigate secret pathways and tunnels, manouvering traps and obstacles.
+  - CC: Gather materials and begin foundation.
+  - UF: Compile comprehensive facility blueprint.
 - Brief 4.4:
-    - Checkpoint 1: Locate prophecy disc and recover data.
-    - Creator Circle: Create storage hall for weapon system.
-    - Unity Force: Scan entire Red Nexus headquarters.
-## Mission 5:
-- Objective:
-    - Checkpoint 1: Run a decipher protocol on the prophecy disc to reveal its secrets. What you find could change everything.
-    - Creator Circle: Build the annual reception pavilion for the Creator Games. Tradition must endure even in times of war.
-    - Unity Force: Reproduce a portable camp to hold position until reinforcements arrive. Tonight, the mountain becomes our fortress.
+  - C1: Locate prophecy disc and recover data.
+  - CC: Create storage hall for weapon system.
+  - UF: Scan entire Red Nexus headquarters.
+
+## Mission 5
+- Objective
+  - C1: Run a decipher protocol on the prophecy disc to reveal its secrets. What you find could change everything.
+  - CC: Build the annual reception pavilion for the Creator Games. Tradition must endure even in times of war.
+  - UF: Reproduce a portable camp to hold position until reinforcements arrive. Tonight, the mountain becomes our fortress.
 - Brief 5.1:
-    - Checkpoint 1: Run pattern recognition algorithms.
-    - Creator Circle: Plan pavilion foundation and structural layout.
-    - Unity Force: Scout defensible position for camp setup.
+  - C1: Extract encoded data from prophecy disc.
+  - CC: Plan pavilion foundation and structural layout.
+  - UF: Scout defensible position for camp setup.
 - Brief 5.2:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: Add traditional Creator Circle elements.
-    - Unity Force: Scan portable shelter components.
+  - C1: Run pattern recognition algorithms.
+  - CC: Design ceremonial pavilion architecture.
+  - UF: Scan portable shelter components.
 - Brief 5.3:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: Design ceremonial pavilion architecture.
-    - Unity Force: Test structural integrity under field conditions.
+  - C1: Cross-reference Ancient Walker databases.
+  - CC: Add traditional Creator Circle elements.
+  - UF: Test structural integrity under field conditions.
 - Brief 5.4:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: Build annual WCG Reception Pavilion.
-    - Unity Force: Reproduce portable camp space.
-## Mission 6:
-- Objective:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Double your supplies and equip the Unity Convoy for the frontline. Our fighters cannot hold without this lifeline.
+  - C1: Run decipher protocol to read prophecy disc.
+  - CC: Build annual WCG Reception Pavilion.
+  - UF: Reproduce portable camp space.
+
+## Mission 6
+- Objective
+  - C1: Deploy your EXPLOR-8s to deliver a unifying message to the tribes. Only together can we rewrite the prophecy.
+  - CC: Construct the drone weapon system you once only imagined. The time for design is over — now we build.
+  - UF: Double your supplies and equip the Unity Convoy for the frontline. Our fighters cannot hold without this lifeline.
 - Brief 6.1:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Scan essential supplies for duplication.
+  - C1: Encode message with security protocols.
+  - CC: Source materials for weapon construction.
+  - UF: Scan essential supplies for duplication.
 - Brief 6.2:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Load and secure convoy vehicles.
+  - C1: Program EXPLOR-8 delivery routes.
+  - CC: Assemble core weapon components.
+  - UF: Load and secure convoy vehicles.
 - Brief 6.3:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Double inventory and equip Unity Convoy.
-## Mission 7:
-- Objective:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Practice with weapons and armor to prepare for the coming battle. The strike date is set — sharpen your edge.
+  - C1: Deliver message to other tribes.
+  - CC: Construct new drone weapon system.
+  - UF: Double inventory and equip Unity Convoy.
+
+## Mission 7
+- Objective
+  - C1: Develop new weapons for your EXPLOR-8s and train without pause. Prove our tribe can stand shoulder to shoulder with the others.
+  - CC: Double your arsenal by creating stronger, smarter designs. Precision and creativity will tip the balance of war.
+  - UF: Practice with weapons and armor to prepare for the coming battle. The strike date is set — sharpen your edge.
 - Brief 7.1:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Equip drones with combat loadouts.
+  - C1: Install weapon systems on EXPLOR-8s.
+  - CC: Analyze current weapon inventory.
+  - UF: Equip drones with combat loadouts.
 - Brief 7.2:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Run targeting calibration exercises.
+  - C1: Test weapon energy consumption rates.
+  - CC: Optimize production efficiency protocols.
+  - UF: Run targeting calibration exercises.
 - Brief 7.3:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Run defensive measure tests.
+  - C1: Practice combat formations
+  - CC: Mass-produce weapon components.
+  - UF: Run defensive measure tests.
 - Brief 7.4:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Practice and simulate combat with weapons and armor for battle.
-## Mission 8:
-- Objective:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Build a training system inside the dome to harden your tribe. Obstacles and enemies here will decide survival later.
+  - C1: Practice with weapons and armor for battle.
+  - CC: Double weapon arsenal production.
+  - UF: Practice and simulate combat with weapons and armor for battle.
+
+## Mission 8
+- Objective
+  - C1: Program obstacles and coded trials to push every Walker to the limit. The harsher the training, the sharper the tribe.
+  - CC: Craft a masterpiece of trials inside the dome. This arena must test our minds as much as our strength.
+  - UF: Build a training system inside the dome to harden your tribe. Obstacles and enemies here will decide survival later.
 - Brief 8.1:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Scan Red Nexus combat tactics from HQ data.
+  - C1: Write adaptive AI code for training opponents.
+  - CC: Design creative obstacle patterns to challenge pilots.
+  - UF: Scan Red Nexus combat tactics from HQ data.
 - Brief 8.2:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Reproduce enemy RX-8 behavior patterns for training.
+  - C1: Program difficulty scaling based on pilot performance.
+  - CC: Craft illusion-based puzzles using CRE-AV8 abilities.
+  - UF: Reproduce enemy RX-8 behavior patterns for training.
 - Brief 8.3:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Build physical obstacle course with combat scenarios.
+  - C1: Install holographic projection systems for virtual enemies.
+  - CC: Build multi-layered trial chambers with hidden solutions.
+  - UF: Build physical obstacle course with combat scenarios.
 - Brief 8.4:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: Create training system inside dome - obstacles and enemies.
-## Mission 9:
-- Objective:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Program coded trials and obstacles - push Walkers to limits.
+  - CC: Create masterpiece training arena - test minds and strength.
+  - UF: Create training system inside dome - obstacles and enemies.
+
+## Mission 9
+- Objective
+  - C1: Deploy EXPLOR-8s to uncover and neutralize Red Nexus surveillance. If spies remain hidden, the prophecy is at risk.
+  - CC: Build rapid countermeasures with CRE-AV8s under pressure. Defenses must answer chaos in seconds, not minutes.
+  - UF: Run endurance drills to stress-test AV8s under battle conditions. If they fail now, we lose more than machines.
 - Brief 9.1:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Scan for unusual energy signatures.
+  - CC: Identify potential battlefield threats.
+  - UF: Push AV8s to maximum operational limits.
 - Brief 9.2:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Deploy EXPLOR-8s on reconnaissance.
+  - CC: Design rapid-deployment defenses.
+  - UF: Simulate combat damage scenarios.
 - Brief 9.3:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Analyze surveillance data patterns.
+  - CC: Practice emergency construction speed.
+  - UF: Test emergency repair protocols.
 - Brief 9.4:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
-## Mission 10:
-- Objective:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Detect and neutralize enemy surveillance.
+  - CC: Construct and test emergency countermeasures.
+  - UF: Run endurance drills to stress-test AV8s.
+
+## Mission 10
+- Objective
+  - C1: Deploy EXPLOR-8s in precise sync with the tribes. The signal will prove we are unstoppable together.
+  - CC: Launch your CRE-AV8s in perfect formation. This is our declaration that unity has begun.
+  - UF: Execute a flawless synchronized AV8 formation above the dome. Tonight, the world will see our defiance.
 - Brief 10.1:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Write synchronization algorithms for all three drone types.
+  - CC: Design formation patterns that spell unity messages.
+  - UF: Calculate exact AV8 positioning for maximum visual impact.
 - Brief 10.2:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Calibrate EXPLOR-8 speeds to match other drones.
+  - CC: Add light displays to CRE-AV8s for visual enhancement.
+  - UF: Drill formation transitions with military precision.
 - Brief 10.3:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Test inter-tribe communication protocols.
+  - CC: Choreograph artistic movements within formation.
+  - UF: Perfect timing synchronization to the millisecond.
 - Brief 10.4:
-    - Checkpoint 1: \<Find>
-    - Creator Circle: \<Find>
-    - Unity Force: \<Find>
+  - C1: Deploy EXPLOR-8s in precise formation synced with tribes.
+  - CC: Launch CRE-AV8s in perfect formation - declare unity.
+  - UF: Execute flawless synchronized AV8 formation above dome.
+
+## Mission 11
+- Objective
+  - C1: Send EXPLOR-8s to infiltrate and download the Red Nexus database. Knowledge is the crack in their armor.
+  - CC: Produce the Network Device so all drones can act as one. This invention is the weapon Red Nexus cannot match.
+  - UF: Drop contraband supplies into Red Nexus prisons to aid captured Walkers. Even a spark of hope can keep them alive.
+- Brief 11.1:
+  - C1: Map global Red Nexus facility locations.
+  - CC: Design network synchronization hardware.
+  - UF: Package contraband in micro-containers.
+- Brief 11.2:
+  - C1: Deploy EXPLOR-8s to infiltrate Red Nexus fortress systems.
+  - CC: Test multi-drone connectivity protocols.
+  - UF: Map prison security systems.
+- Brief 11.3:
+  - C1: Breach database security protocols.
+  - CC: Mass-produce device components.
+  - UF: Time guard patrol intervals.
+- Brief 11.4:
+  - C1: Download and steal Red Nexus data.
+  - CC: Produce Network Device for all drones.
+  - UF: Drop contraband for imprisoned Walkers.
+
+## Mission 12
+- Objective
+  - C1: Seize control of Red Nexus’s power source. Cut their lights, and we gain the upper hand.
+  - CC: Deploy traps and fake doors to confuse the enemy. When Red Nexus chases, we’ll make them choke on chaos.
+  - UF: Link every AV8 to the Network Device and secure the connection. If the link fails, the rescue collapses.
+- Brief 12.1:
+  - C1: Locate Red Nexus power infrastructure.
+  - CC: Scout desert terrain around Red Nexus perimeter.
+  - UF: Initialize Network Device interface.
+- Brief 12.2:
+  - C1: Hack into electrical grid systems.
+  - CC: Design deceptive trap mechanisms.
+  - UF: Test drone-to-drone communication.
+- Brief 12.3:
+  - C1: Install remote control protocols.
+  - CC: Construct false doors and decoys.
+  - UF: Stabilize connection bandwidth.
+- Brief 12.4:
+  - C1: Seize control of Red Nexus power source and cut their lights.
+  - CC: Deploy traps and fake doors to confuse Red Nexus forces.
+  - UF: Connect and secure drones to Network Device.
+
+## Mission 13
+- Objective
+  - C1: Rescue the imprisoned Walkers and fly them to safety. Without them, the prophecy can never be fulfilled.
+  - CC: Distract the enemy with traps, decoys, and illusions. Every second bought is one closer to freedom.
+  - UF: Activate the Network Device to merge all drones into a single force. In unity, the tribes become unstoppable.
+- Brief 13.1:
+  - C1: Cut power to prison sectors.
+  - CC: Deploy initial wave of decoys.
+  - UF: Breach Red Nexus outer defenses.
+- Brief 13.2:
+  - C1: Infiltrate Red Nexus with unmatched speed, outrunning Red Nexus forces.
+  - CC: Create false RX-8 drone clones.
+  - UF: Split teams for dual objectives.
+- Brief 13.3:
+  - C1: Locate imprisoned walkers.
+  - CC: Generate maximum confusion.
+  - UF: Activate Network Device - unite all drones.
+- Brief 13.4:
+  - C1: Mount prisoners on EXPLOR-8s and fly them to safety.
+  - CC: Distract enemy forces while C1 finishes their rescue mission.
+  - UF: Engage RX-8 drone swarms.
+
+## Mission 14
+- Objective
+  - C1: Send EXPLOR-8s to infiltrate and download the Red Nexus database. Knowledge is the crack in their armor.
+  - CC: Produce the Network Device so all drones can act as one. This invention is the weapon Red Nexus cannot match.
+  - UF: Drop contraband supplies into Red Nexus prisons to aid captured Walkers. Even a spark of hope can keep them alive.
+- Brief 14.1:
+  - C1: Map global Red Nexus facility locations.
+  - CC: Design network synchronization hardware.
+  - UF: Package contraband in micro-containers.
+- Brief 14.2:
+  - C1: Deploy EXPLOR-8s to infiltrate Red Nexus fortress systems.
+  - CC: Test multi-drone connectivity protocols.
+  - UF: Map prison security systems.
+- Brief 14.3:
+  - C1: Breach database security protocols.
+  - CC: Mass-produce device components.
+  - UF: Time guard patrol intervals.
+- Brief 14.4:
+  - C1: Download and steal Red Nexus data.
+  - CC: Produce Network Device for all drones.
+  - UF: Drop contraband for imprisoned Walkers.
+
+## Mission 15
+- Objective
+  - C1: Seize control of Red Nexus's power source. Cut their lights, and we gain the upper hand.
+  - CC: Deploy traps and fake doors to confuse the enemy. When Red Nexus chases, we'll make them choke on chaos.
+  - UF: Link every AV8 to the Network Device and secure the connection. If the link fails, the rescue collapses.
+- Brief 15.1:
+  - C1: Locate Red Nexus power infrastructure.
+  - CC: Scout desert terrain around Red Nexus perimeter.
+  - UF: Initialize Network Device interface.
+- Brief 15.2:
+  - C1: Hack into electrical grid systems.
+  - CC: Design deceptive trap mechanisms.
+  - UF: Test drone-to-drone communication.
+- Brief 15.3:
+  - C1: Install remote control protocols.
+  - CC: Construct false doors and decoys.
+  - UF: Stabilize connection bandwidth.
+- Brief 15.4:
+  - C1: Seize control of Red Nexus power source and cut their lights.
+  - CC: Deploy traps and fake doors to confuse Red Nexus forces.
+  - UF: Connect and secure drones to Network Device.
+
+## Mission 16
+- Objective
+  - C1: Rescue the imprisoned Walkers and fly them to safety. Without them, the prophecy can never be fulfilled.
+  - CC: Distract the enemy with traps, decoys, and illusions. Every second bought is one closer to freedom.
+  - UF: Activate the Network Device to merge all drones into a single force. In unity, the tribes become unstoppable.
+- Brief 16.1:
+  - C1: Cut power to prison sectors.
+  - CC: Deploy initial wave of decoys.
+  - UF: Breach Red Nexus outer defenses.
+- Brief 16.2:
+  - C1: Infiltrate Red Nexus with unmatched speed, outrunning Red Nexus forces.
+  - CC: Create false RX-8 drone clones.
+  - UF: Split teams for dual objectives.
+- Brief 16.3:
+  - C1: Locate imprisoned walkers.
+  - CC: Generate maximum confusion.
+  - UF: Activate Network Device - unite all drones.
+- Brief 16.4:
+  - C1: Mount prisoners on EXPLOR-8s and fly them to safety.
+  - CC: Distract enemy forces while C1 finishes their rescue mission.
+  - UF: Engage RX-8 drone swarms.
