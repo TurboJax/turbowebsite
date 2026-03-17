@@ -35,13 +35,13 @@ def http_error(code: int, **kwargs) -> tuple:
     """
     return render_template(f"errors/{code}.j2", **kwargs), code
 
-def render_jinja(template: str, **kwargs) -> str | tuple:
+def render_jinja(template_path: str, **kwargs) -> str | tuple:
     """
     Renders a jinja2 template.
     If the template is not found, it renders the 404 error.
 
     Parameters:
-        template (str): The jinja template to render.
+        template_path (str): The path to the jinja template to render.
 
     Returns:
         str: The rendered template
@@ -49,7 +49,7 @@ def render_jinja(template: str, **kwargs) -> str | tuple:
     """
     try:
         # Rendering the template
-        return env.get_template(template).render(**kwargs)
+        return env.get_template(template_path).render(**kwargs)
     except TemplateNotFound:
         # 404 because the template could not be found
         return http_error(404)
