@@ -4,6 +4,7 @@
 {% block header %}/files/{{ file }}{% endblock %}
 
 {% block head %}
+<script type="module" src="https://cdn.jsdelivr.net/npm/zero-md@3?register"></script>
 <style>
 #content a {
     background-color: rgb(233, 235, 238);
@@ -16,5 +17,10 @@
 
 {% block content %}
 <a href="/raw_files/{{ file }}"><img alt="download" height="32" src="/static/img/dl_icon.png"></a>
-<{{ filetype }} src="/raw_files/{{ file }}"/>
+<zero-md>
+    <script type="text/markdown">{{ md }}</script>
+    <template data-append>
+        <link rel="stylesheet" href="/static/css/md.css" />
+    </template>
+</zero-md>
 {% endblock %}

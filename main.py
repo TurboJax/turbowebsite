@@ -209,11 +209,15 @@ def list_directory(subpath=""):
     if os.path.isfile(abs_path):
         # Render HTML
         if abs_path.endswith(".html"):
-            return render_html(abs_path)
+            with open(abs_path, "r") as file:
+                data = file.read()
+            return render_jinja("util/render_html.j2", html=data, file=subpath)
 
         # Render MD
         if abs_path.endswith(".md"):
-            return render_md(abs_path)
+            with open(abs_path, "r") as file:
+                data = file.read()
+            return render_jinja("util/render_md.j2", md=data, file=subpath)
 
         # Render j2 (retains context from this app)
         if abs_path.endswith(".j2"):
