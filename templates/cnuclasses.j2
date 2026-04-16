@@ -7,6 +7,19 @@
 {% endblock %}
 
 {% block content %}
+<form action="/cnuclasses" method="POST">
+<label for="semester">Choose a Semester:</label>
+
+<select name="semester" id="semester">
+  <option value="202700">Fall 2026</option>
+  <option value="202632">Summer 2 2026</option>
+  <option value="202631">Summer 1 2026</option>
+  <option value="202620">May 2026</option>
+  <option value="202610">Spring 2026</option>
+</select>
+<input type="submit" value="GO!"/>
+</form>
+<br>
 <table>
     <thead>
         <tr>
